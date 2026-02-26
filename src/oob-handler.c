@@ -222,16 +222,27 @@ ssize_t read(int sockfd, void *buf, size_t len)
     FD_SET(sockfd, &exceptfds);
     struct timeval timeout = {0, 0}; // Non-blocking select
     int sel_ret = original_select(sockfd + 1, &readfds, NULL, NULL, &timeout);
-    if (sel_ret > 0) {
-        log_fd_set("readfds (before read)", &readfds, sockfd + 1);
-        log_fd_set("exceptfds (before read)", &exceptfds, sockfd + 1);
-    } else {
+
+    if (FD_ISSET(sockfd, &exceptfds) && !has_token) {
+        try_recv_oob_token(sockfd);
+    } 
+    if (!FD_ISSET(sockfd, &readfds)) {
         if (has_token) {
             LOG("[pid=%d] read: sockfd=%d, len=%zu, sel_ret=%d, has_token=%d => sending OOB token before read\n",
                     getpid(), sockfd, len, sel_ret, has_token);
             send_oob_token(sockfd);
         }
     }
+    // if (sel_ret > 0) {
+    //     log_fd_set("readfds (before read)", &readfds, sockfd + 1);
+    //     log_fd_set("exceptfds (before read)", &exceptfds, sockfd + 1);
+    // } else {
+    //     if (has_token) {
+    //         LOG("[pid=%d] read: sockfd=%d, len=%zu, sel_ret=%d, has_token=%d => sending OOB token before read\n",
+    //                 getpid(), sockfd, len, sel_ret, has_token);
+    //         send_oob_token(sockfd);
+    //     }
+    // }
 
     int ret = original_read(sockfd, buf, len);
     LOG("[pid=%d] read: sockfd=%d, len=%zu, ret=%d, has_token=%d\n",
