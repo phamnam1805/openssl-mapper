@@ -1,0 +1,25 @@
+[OOB-HANDLER] pid=158521 accept: new client_fd=4 from unknown:0, MONITORED_FD updated
+[OOB-HANDLER] read: sockfd=4, len=5, has_token=0
+[OOB-HANDLER] pid=158521 received OOB token on fd=4 via recv(), byte=0x58
+[OOB-HANDLER] read: sockfd=4, len=153, has_token=1
+[OOB-HANDLER] pid=158521 write: fd=4 count=1439 => ret=1439
+[OOB-HANDLER] read: sockfd=4, len=5, has_token=1 => sending OOB token before read
+[OOB-HANDLER] pid=158521 sent OOB token on fd=4, token released
+[OOB-HANDLER] read: sockfd=4, len=5, has_token=0
+[OOB-HANDLER] pid=158521 received OOB token on fd=4 via recv(), byte=0x58
+[OOB-HANDLER] read: sockfd=4, len=53, has_token=1
+[OOB-HANDLER] pid=158521 write: fd=4 count=239 => ret=239
+[OOB-HANDLER] pid=158521 write: fd=4 count=239 => ret=239
+[OOB-HANDLER] SSL_accept: sockfd=4, ret=1, has_token=1 => sending OOB token after SSL_accept
+[OOB-HANDLER] pid=158521 sent OOB token on fd=4, token released
+[OOB-HANDLER] read: sockfd=4, len=5, has_token=0
+[OOB-HANDLER] pid=158521 received OOB token on fd=4 via recv(), byte=0x58
+[OOB-HANDLER] read: sockfd=4, len=19, has_token=1
+[OOB-HANDLER] pid=158521 SSL_read: fd=4 => ret=0
+[OOB-HANDLER] pid=158521 write: fd=4 count=24 => ret=24
+[OOB-HANDLER] read: sockfd=4, len=64, has_token=1 => sending OOB token before read
+[OOB-HANDLER] pid=158521 failed to send OOB token on fd=4: Broken pipe
+[OOB-HANDLER] read: sockfd=4, len=64, has_token=1
+[OOB-HANDLER] read: sockfd=4, len=64, has_token=1
+[OOB-HANDLER] read: sockfd=4, len=64, has_token=1
+[OOB-HANDLER] read: sockfd=4, len=64, has_token=1

@@ -1,0 +1,355 @@
+execve("/usr/bin/openssl", ["openssl", "s_server", "-accept", "4443", "-cert", "./self-signed-certs/server-cert.pem", "-key", "./self-signed-certs/server-key.pem"], 0x7ffc5cdd8c48 /* 22 vars */) = 0
+brk(NULL)                               = 0x6432c1ebb000
+mmap(NULL, 8192, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x74f95eb34000
+access("/etc/ld.so.preload", R_OK)      = -1 ENOENT (No such file or directory)
+openat(AT_FDCWD, "/etc/ld.so.cache", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=22299, ...}) = 0
+mmap(NULL, 22299, PROT_READ, MAP_PRIVATE, 3, 0) = 0x74f95eb2e000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libssl.so.3", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\200\231\n\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\35\0\34\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=696512, ...}) = 0
+mmap(NULL, 694384, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x74f95ea84000
+mmap(0x74f95eaa2000, 401408, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1e000) = 0x74f95eaa2000
+mmap(0x74f95eb04000, 114688, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x80000) = 0x74f95eb04000
+mmap(0x74f95eb20000, 57344, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x9c000) = 0x74f95eb20000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libcrypto.so.3", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\0\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\0\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\230\374P\0\0\0\0\0\0\0\0\0@\08\0\v\0@\0\35\0\34\0"..., 832) = 832
+fstat(3, {st_mode=S_IFREG|0644, st_size=5309400, ...}) = 0
+mmap(NULL, 5323728, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x74f95e400000
+mmap(0x74f95e4b3000, 3358720, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0xb3000) = 0x74f95e4b3000
+mmap(0x74f95e7e7000, 831488, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x3e7000) = 0x74f95e7e7000
+mmap(0x74f95e8b2000, 389120, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x4b1000) = 0x74f95e8b2000
+mmap(0x74f95e911000, 11216, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x74f95e911000
+close(3)                                = 0
+openat(AT_FDCWD, "/lib/x86_64-linux-gnu/libc.so.6", O_RDONLY|O_CLOEXEC) = 3
+read(3, "\177ELF\2\1\1\3\0\0\0\0\0\0\0\0\3\0>\0\1\0\0\0\220\243\2\0\0\0\0\0@\0\0\0\0\0\0\0\20^ \0\0\0\0\0\0\0\0\0@\08\0\16\0@\0@\0?\0"..., 832) = 832
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\20\3\0\0\0\0\0\0\20\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0"..., 784, 64) = 784
+fstat(3, {st_mode=S_IFREG|0755, st_size=2125328, ...}) = 0
+pread64(3, "\6\0\0\0\4\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0@\0\0\0\0\0\0\0\20\3\0\0\0\0\0\0\20\3\0\0\0\0\0\0\10\0\0\0\0\0\0\0\3\0\0\0\4\0\0\0"..., 784, 64) = 784
+mmap(NULL, 2170256, PROT_READ, MAP_PRIVATE|MAP_DENYWRITE, 3, 0) = 0x74f95e000000
+mmap(0x74f95e028000, 1605632, PROT_READ|PROT_EXEC, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x28000) = 0x74f95e028000
+mmap(0x74f95e1b0000, 323584, PROT_READ, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1b0000) = 0x74f95e1b0000
+mmap(0x74f95e1ff000, 24576, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_DENYWRITE, 3, 0x1fe000) = 0x74f95e1ff000
+mmap(0x74f95e205000, 52624, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_FIXED|MAP_ANONYMOUS, -1, 0) = 0x74f95e205000
+close(3)                                = 0
+mmap(NULL, 12288, PROT_READ|PROT_WRITE, MAP_PRIVATE|MAP_ANONYMOUS, -1, 0) = 0x74f95ea81000
+arch_prctl(ARCH_SET_FS, 0x74f95ea81740) = 0
+set_tid_address(0x74f95ea81a10)         = 291555
+set_robust_list(0x74f95ea81a20, 24)     = 0
+rseq(0x74f95ea82060, 0x20, 0, 0x53053053) = 0
+mprotect(0x74f95e1ff000, 16384, PROT_READ) = 0
+mprotect(0x74f95e8b2000, 376832, PROT_READ) = 0
+mprotect(0x74f95eb20000, 40960, PROT_READ) = 0
+mprotect(0x6432a699a000, 73728, PROT_READ) = 0
+mprotect(0x74f95eb6c000, 8192, PROT_READ) = 0
+prlimit64(0, RLIMIT_STACK, NULL, {rlim_cur=8192*1024, rlim_max=RLIM64_INFINITY}) = 0
+munmap(0x74f95eb2e000, 22299)           = 0
+getrandom("\xa6\x2f\xc7\x30\xff\x96\x26\x60", 8, GRND_NONBLOCK) = 8
+brk(NULL)                               = 0x6432c1ebb000
+brk(0x6432c1edc000)                     = 0x6432c1edc000
+openat(AT_FDCWD, "/proc/sys/crypto/fips_enabled", O_RDONLY) = -1 ENOENT (No such file or directory)
+futex(0x74f95e9110ec, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e910f08, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+rt_sigaction(SIGPIPE, {sa_handler=SIG_IGN, sa_mask=[PIPE], sa_flags=SA_RESTORER|SA_RESTART, sa_restorer=0x74f95e045330}, {sa_handler=SIG_DFL, sa_mask=[], sa_flags=0}, 8) = 0
+futex(0x74f95e9113ec, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e9113e0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e9113d8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e9114e0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e9113c8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e9113c0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e910e44, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e911424, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e910e38, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e9113d0, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+openat(AT_FDCWD, "/usr/lib/ssl/openssl.cnf", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=12324, ...}) = 0
+read(3, "#\n# OpenSSL example configuration file.\n# See doc/man5/config.po"..., 4096) = 4096
+read(3, "d attributes must be the same, and the optional\n# and supplied f"..., 4096) = 4096
+read(3, "coding of an extension: beware experts only!\n# obj=DER:02:03\n# W"..., 4096) = 4096
+read(3, " = $insta::certout # insta.cert.pem\n", 4096) = 36
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+futex(0x74f95e910bf8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e910c54, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e911394, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e910bd8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e9113b8, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95eb2d844, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95eb2d864, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95e9116a4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+newfstatat(AT_FDCWD, "./self-signed-certs/server-key.pem", {st_mode=S_IFREG|0600, st_size=1704, ...}, 0) = 0
+openat(AT_FDCWD, "./self-signed-certs/server-key.pem", O_RDONLY) = 3
+brk(0x6432c1efd000)                     = 0x6432c1efd000
+lseek(3, 0, SEEK_CUR)                   = 0
+lseek(3, 0, SEEK_CUR)                   = 0
+fstat(3, {st_mode=S_IFREG|0600, st_size=1704, ...}) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcw"..., 8192) = 1704
+close(3)                                = 0
+newfstatat(AT_FDCWD, "./self-signed-certs/server-cert.pem", {st_mode=S_IFREG|0644, st_size=1237, ...}, 0) = 0
+openat(AT_FDCWD, "./self-signed-certs/server-cert.pem", O_RDONLY) = 3
+lseek(3, 0, SEEK_CUR)                   = 0
+lseek(3, 0, SEEK_CUR)                   = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=1237, ...}) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "-----BEGIN CERTIFICATE-----\nMIIDZDCCAkygAwIBAgIUcTwZJmMuFUXLUFIX"..., 8192) = 1237
+close(3)                                = 0
+futex(0x74f95eb2d858, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+futex(0x74f95eb2d838, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+brk(0x6432c1f1e000)                     = 0x6432c1f1e000
+brk(0x6432c1f1d000)                     = 0x6432c1f1d000
+brk(0x6432c1f3e000)                     = 0x6432c1f3e000
+futex(0x74f95e911520, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+getpid()                                = 291555
+getrandom("\x87\x2f\x93\x5c\xe8\x3e\x6a\x60\x4f\x11\x88\x67\x16\x98\x5c\x6a\xf1\x52\xe2\xda\x3e\x96\x74\x27\x94\x72\x6b\x4b\xda\xf8\xeb\xe0\x8c\xca\xd1\x2b\x6f\xea\x1f\xc1\x15\x16\x84\x85\xf7\xff\x6e\x00", 48, 0) = 48
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+openat(AT_FDCWD, "/usr/lib/ssl/cert.pem", O_RDONLY) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=219342, ...}) = 0
+read(3, "-----BEGIN CERTIFICATE-----\nMIIH0zCCBbugAwIBAgIIXsO3pkN/pOAwDQYJ"..., 4096) = 4096
+read(3, "8B1\nRXxlDPiyN8+sD8+Nb/kZ94/sHvJwnvDKuO+3/3Y3dlv2bojzr2IyIpMNOmqO"..., 4096) = 4096
+read(3, "BgkqhkiG9w0BAQEFAAOCAg8AMIICCgKCAgEAp8bEpSmkLO/lGMWwUKNv\nUTufClr"..., 4096) = 4096
+read(3, "oZIhvcNAQEMBQAwQTELMAkGA1UE\nBhMCVVMxFDASBgNVBAoMC0FmZmlybVRydXN0"..., 4096) = 4096
+read(3, "DCCAgoCggIBAK2Wny2cSkxK\ngXlRmeyKy2tgURO8TW0G/LAIjd0ZEGrHJgw12MBv"..., 4096) = 4096
+read(3, "aAjMaZ7snkGeRDImeuKHCnE96+RapNLbxc3G3mB/ufNPRJLv\nKrcYPqcZ2Qt9sTd"..., 4096) = 4096
+read(3, "MFwGCCsGAQUFBwICMFAeTgBQAGEAcwBlAG8AIABkAGUAIABsAGEAIABC\nAG8AbgB"..., 4096) = 4096
+read(3, "41uOKymaZN+hXe2wCQVt2yguzmKiYv60iNoS6zjr\nIZ3AQSsBUnuId9Mcj8e6uYi"..., 4096) = 4096
+brk(0x6432c1f5f000)                     = 0x6432c1f5f000
+brk(0x6432c1f5e000)                     = 0x6432c1f5e000
+read(3, "HEy9BHcEGhyoMZCCxt8l13nIoUE9Q2\nHJLw5QY33KbmkJs4j1xrG0aGQ0JfPgEHU"..., 4096) = 4096
+read(3, "1MvIB671Oi6ON7fQAUtDKXeMOZePglr4UeWJoBjnaH9d\nCi77o0cOPaYjesYBx4/"..., 4096) = 4096
+read(3, "MtQwDgYDVR0PAQH/BAQDAgEGMA8GA1UdEwEB\n/wQFMAMBAf8wDQYJKoZIhvcNAQE"..., 4096) = 4096
+read(3, "gbwwgbkw\nDwYDVR0TAQH/BAUwAwEB/zAdBgNVHQ4EFgQUGu3+QTmQtCRZvgHyUtV"..., 4096) = 4096
+read(3, "TIwNzM3\nWjB+MQswCQYDVQQGEwJQTDEiMCAGA1UEChMZVW5pemV0byBUZWNobm9s"..., 4096) = 4096
+read(3, "JGmj8PkTQkfVXjjJU30xrwCSss0smNtA0Aq2cpKNgB9RkEth2+dv5yXMSF\nytKAQ"..., 4096) = 4096
+read(3, "mwrZggvkN80V4aCRckjXtdlemrwWCrWxhkgPut4AZ9HcpZuPN4KWfGVh2v\ntrV0K"..., 4096) = 4096
+read(3, "GEwJERTEVMBMGA1UEChMMRC1UcnVzdCBHbWJIMSIwIAYDVQQDExlELVRS\nVVNUIE"..., 4096) = 4096
+brk(0x6432c1f7f000)                     = 0x6432c1f7f000
+brk(0x6432c1f7e000)                     = 0x6432c1f7e000
+read(3, "HThfqr4uRjRxWQa4iN1438h3Z0S0NL2lR\np75mpoo6Kr3HGrHhFPC+Oh25z1uxav"..., 4096) = 4096
+read(3, "\nZn4f5dwbRXkLzMZTCp2NXQLZqVneAlr2lSoOjThKiknGvMYDOAdfVdp+CW7if17"..., 4096) = 4096
+read(3, "DAwMFoXDTMxMTExMDAwMDAwMFowbDEL\nMAkGA1UEBhMCVVMxFTATBgNVBAoTDERp"..., 4096) = 4096
+read(3, "DAwWjBiMQswCQYDVQQGEwJV\nUzEVMBMGA1UEChMMRGlnaUNlcnQgSW5jMRkwFwYD"..., 4096) = 4096
+read(3, "+JXGI\nrb68j6xSlkuqUY3kEzEZ6E5Nn9uss2rVvDlUccp6en+Q3X0dgNmBu1kmwh"..., 4096) = 4096
+read(3, "CAgEAsewsQu7i0TD/pZJH4i3DumSXbcr3DbVZwbPLqGgZ\n2K+EbTBwXX7zLtJTme"..., 4096) = 4096
+read(3, "cpL3TGQlsjMH/1WljTbjhzqLL6FLmPdqqmV0/0plRPw\nyJiT2S0WR5ARg6I6IqIo"..., 4096) = 4096
+read(3, "fKtzra7tEscszcTJGr61K8Yzo\ndDqs5xoic4DSMPclQsciOzsSrZYuxsN2B6ogtz"..., 4096) = 4096
+brk(0x6432c1f9f000)                     = 0x6432c1f9f000
+brk(0x6432c1f9e000)                     = 0x6432c1f9e000
+read(3, "oCOJuxUnO\nxwy8p2Fp8fc74SrL+SvzZpA3\n-----END CERTIFICATE-----\n---"..., 4096) = 4096
+read(3, "/QcYF8AOiYrg54NMMl+68KnyBr3TsTjxKM4kEaSHpz\noHdpx7Zcf4LIHv5YGygrq"..., 4096) = 4096
+read(3, "zcyAyIENlcnRpZmlj\nYXRpb24gQXV0aG9yaXR5ggEAMAwGA1UdEwQFMAMBAf8wDQ"..., 4096) = 4096
+read(3, "VGpdAgS1D0NTsY9FVqQRtHBmg8uwkIYtlfVUKqrFOFrJVWNlar5AWMxaja\nH6Npv"..., 4096) = 4096
+read(3, "wgTHRkLjEbMBkGA1UEAwwSSGlQS0kgUm9vdCBDQSAtIEcx\nMIICIjANBgkqhkiG9"..., 4096) = 4096
+read(3, "AgoCggIBAK3oJHP0FDfzm54rVygc\nh77ct984kIxuPOZXoHj3dcKi/vVqbvYATyj"..., 4096) = 4096
+read(3, "u7rs3KSoFrXgvzUeF0K+l+J6fZ\nmUlO+KWA2yUPHGNiiskzZ2s8EIPGrd6ozRaOj"..., 4096) = 4096
+read(3, "Bp6iSNnpn86CcDaTmjvfliHjWbcM2pE38P1ZWrOZyGls\nQyYBNWNgVYkDOnXYukr"..., 4096) = 4096
+brk(0x6432c1fbf000)                     = 0x6432c1fbf000
+brk(0x6432c1fbe000)                     = 0x6432c1fbe000
+read(3, "7P4NHmJweDyAmH3\npvwPuxwXC65B2Xy9J6P9LjrRk5Sxcx0ki69bIImtt2dmefU6"..., 4096) = 4096
+read(3, "YWwgUm9vdCBHQiBDQTAeFw0xNDEyMDExNTAwMzJaFw0zOTEyMDExNTEwMzFaMG0x"..., 4096) = 4096
+read(3, "Jv\nb3QgQ0EgMjAeFw0wNjExMjQxODI3MDBaFw0zMTExMjQxODIzMzNaMEUxCzAJB"..., 4096) = 4096
+read(3, "\nYWRpcyBSb290IENBIDMwggIiMA0GCSqGSIb3DQEBAQUAA4ICDwAwggIKAoICAQD"..., 4096) = 4096
+read(3, "AgMBVRleGFzMRAwDgYDVQQHDAdIb3VzdG9uMRgwFgYDVQQKDA9T\nU0wgQ29ycG9y"..., 4096) = 4096
+read(3, "NVBAMMKFNTTC5jb20gUm9vdCBDZXJ0aWZp\nY2F0aW9uIEF1dGhvcml0eSBSU0EwH"..., 4096) = 4096
+read(3, "wq1gaAafORpR2eCNJvkLTqVTJXojpBzOCBvf\nR4iyrT7gJ4eLSYwfqUdYe5byiB0"..., 4096) = 4096
+read(3, "74TlH7Kph52\ngDY9hAaLMyZlbcp+nv4fjFg4exqDsQ+8FxG75gbMY/qB8oFM2gsQ"..., 4096) = 4096
+read(3, "2VjdXJldHJ1c3QuY29tL1NHQ0EuY3JsMBAGCSsG\nAQQBgjcVAQQDAgEAMA0GCSqG"..., 4096) = 4096
+brk(0x6432c1fdf000)                     = 0x6432c1fdf000
+brk(0x6432c1fde000)                     = 0x6432c1fde000
+read(3, "rtcoHKXJg80jQDdwj98ClZXSEIx2C/pHF7uNke\ngr4Jr2VvKKu/S7XuPghHJ6APb"..., 4096) = 4096
+read(3, "oo2Kooc6rB1snMA0G\nCSqGSIb3DQEBCwUAA4IBAQARWfolTwNvlJk7mh+ChTnUdg"..., 4096) = 4096
+read(3, "4MzI0Nlow\nRzELMAkGA1UEBhMCQ0gxFTATBgNVBAoTDFN3aXNzU2lnbiBBRzEhMB"..., 4096) = 4096
+read(3, "MAMBAf8wDgYDVR0PAQH/BAQDAgEGMB0GA1UdDgQWBBS1\nA/d2O2GCahKqGFPrAyG"..., 4096) = 4096
+read(3, "\nV0NBIFJvb3QgQ2VydGlmaWNhdGlvbiBBdXRob3JpdHkwHhcNMDgwODI4MDcyNDM"..., 4096) = 4096
+read(3, "Q5MB0GA1UdDgQWBBRy\nrOQzeapFh/b9rB2e1scvhtgkOTAOBgNVHQ8BAf8EBAMCA"..., 4096) = 4096
+read(3, "gNVBAcMB0NoaWNhZ28xITAfBgNVBAoMGFRydXN0d2F2ZSBI\nb2xkaW5ncywgSW5j"..., 4096) = 4096
+read(3, "4eI8NLZ1KMKsmwb60ksPqxd\n2JQDoOw05TDENX37Jk0bbjBU2PWARZw5rZzJJQRN"..., 4096) = 4096
+read(3, "LgOGN+jIj\ntm+3SJUIsUROhYw6AlQgL9+/V087OpAh18EmNVQg7Mc/R+zvWr9Les"..., 4096) = 4096
+brk(0x6432c1fff000)                     = 0x6432c1fff000
+brk(0x6432c1ffe000)                     = 0x6432c1ffe000
+read(3, "wrnuWih0hKWbt5DHDAff9Yk2dDLWKMGwsAvgnEzDHNb842m1R0aB\nL6KCq9NjRHD"..., 4096) = 4096
+read(3, "uR59H35s5r0l1ZUa8gWmr4UC\nb6741jH/JclKyMeKqdmfS0mbEVeZkkMR3rYzpMz"..., 4096) = 4096
+read(3, "AB2kZd6fmw/TPMA4GA1UdDwEB/wQEAwIBBjAPBgNVHRMB\nAf8EBTADAQH/MAoGCC"..., 4096) = 4096
+read(3, "nDS/dtitN9Ti72xRFhiQgnH+n9bEOf+QP3A2MMrMudwpremIFUd\ne4BdS49nTPEQ"..., 4096) = 2254
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+newfstatat(AT_FDCWD, "./self-signed-certs/server-cert.pem", {st_mode=S_IFREG|0644, st_size=1237, ...}, 0) = 0
+openat(AT_FDCWD, "./self-signed-certs/server-cert.pem", O_RDONLY) = 3
+lseek(3, 0, SEEK_CUR)                   = 0
+lseek(3, 0, SEEK_CUR)                   = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=1237, ...}) = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "-----BEGIN CERTIFICATE-----\nMIIDZDCCAkygAwIBAgIUcTwZJmMuFUXLUFIX"..., 8192) = 1237
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "-----BEGIN CERTIFICATE-----\nMIIDZDCCAkygAwIBAgIUcTwZJmMuFUXLUFIX"..., 8192) = 1237
+read(3, "", 8192)                       = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "-----BEGIN CERTIFICATE-----\nMIIDZDCCAkygAwIBAgIUcTwZJmMuFUXLUFIX"..., 1237) = 1237
+read(3, "", 8192)                       = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "-----BEGIN CERTIFICATE-----\nMIIDZDCCAkygAwIBAgIUcTwZJmMuFUXLUFIX"..., 1237) = 1237
+read(3, "", 8192)                       = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "-----BEGIN CERTIFICATE-----\nMIIDZDCCAkygAwIBAgIUcTwZJmMuFUXLUFIX"..., 1237) = 1237
+read(3, "", 8192)                       = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "-----BEGIN CERTIFICATE-----\nMIIDZDCCAkygAwIBAgIUcTwZJmMuFUXLUFIX"..., 1237) = 1237
+read(3, "", 8192)                       = 0
+lseek(3, 0, SEEK_SET)                   = 0
+read(3, "-----BEGIN CERTIFICATE-----\nMIIDZDCCAkygAwIBAgIUcTwZJmMuFUXLUFIX"..., 1237) = 1237
+read(3, "", 8192)                       = 0
+close(3)                                = 0
+fstat(1, {st_mode=S_IFCHR|0620, st_rdev=makedev(0x88, 0), ...}) = 0
+write(1, "Using default temp DH parameters\n", 33) = 33
+openat(AT_FDCWD, "/etc/gai.conf", O_RDONLY|O_CLOEXEC) = 3
+fstat(3, {st_mode=S_IFREG|0644, st_size=2584, ...}) = 0
+fstat(3, {st_mode=S_IFREG|0644, st_size=2584, ...}) = 0
+read(3, "# Configuration for getaddrinfo(3).\n#\n# So far only configuratio"..., 4096) = 2584
+read(3, "", 4096)                       = 0
+close(3)                                = 0
+futex(0x74f95e210ec4, FUTEX_WAKE_PRIVATE, 2147483647) = 0
+socket(AF_NETLINK, SOCK_RAW|SOCK_CLOEXEC, NETLINK_ROUTE) = 3
+bind(3, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 0
+getsockname(3, {sa_family=AF_NETLINK, nl_pid=291555, nl_groups=00000000}, [12]) = 0
+sendto(3, [{nlmsg_len=20, nlmsg_type=RTM_GETADDR, nlmsg_flags=NLM_F_REQUEST|NLM_F_DUMP, nlmsg_seq=1772047166, nlmsg_pid=0}, {ifa_family=AF_UNSPEC, ...}], 20, 0, {sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, 12) = 20
+recvmsg(3, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[[{nlmsg_len=76, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1772047166, nlmsg_pid=291555}, {ifa_family=AF_INET, ifa_prefixlen=8, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_HOST, ifa_index=if_nametoindex("lo")}, [[{nla_len=8, nla_type=IFA_ADDRESS}, inet_addr("127.0.0.1")], [{nla_len=8, nla_type=IFA_LOCAL}, inet_addr("127.0.0.1")], [{nla_len=7, nla_type=IFA_LABEL}, "lo"], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=274, tstamp=274}]]], [{nlmsg_len=96, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1772047166, nlmsg_pid=291555}, {ifa_family=AF_INET, ifa_prefixlen=24, ifa_flags=0, ifa_scope=RT_SCOPE_UNIVERSE, ifa_index=if_nametoindex("eth0")}, [[{nla_len=8, nla_type=IFA_ADDRESS}, inet_addr("192.168.5.1")], [{nla_len=8, nla_type=IFA_LOCAL}, inet_addr("192.168.5.1")], [{nla_len=8, nla_type=IFA_BROADCAST}, inet_addr("192.168.5.255")], [{nla_len=9, nla_type=IFA_LABEL}, "eth0"], [{nla_len=8, nla_type=IFA_FLAGS}, 0], [{nla_len=8, nla_type=IFA_RT_PRIORITY}, 200], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=2622, ifa_valid=2622, cstamp=1028, tstamp=10981028}]]], [{nlmsg_len=88, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1772047166, nlmsg_pid=291555}, {ifa_family=AF_INET, ifa_prefixlen=16, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_UNIVERSE, ifa_index=if_nametoindex("docker0")}, [[{nla_len=8, nla_type=IFA_ADDRESS}, inet_addr("172.17.0.1")], [{nla_len=8, nla_type=IFA_LOCAL}, inet_addr("172.17.0.1")], [{nla_len=8, nla_type=IFA_BROADCAST}, inet_addr("172.17.255.255")], [{nla_len=12, nla_type=IFA_LABEL}, "docker0"], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=2261, tstamp=2261}]]]], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 260
+recvmsg(3, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[[{nlmsg_len=72, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1772047166, nlmsg_pid=291555}, {ifa_family=AF_INET6, ifa_prefixlen=128, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_HOST, ifa_index=if_nametoindex("lo")}, [[{nla_len=20, nla_type=IFA_ADDRESS}, inet_pton(AF_INET6, "::1")], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=275, tstamp=275}], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT|IFA_F_NOPREFIXROUTE]]], [{nlmsg_len=80, nlmsg_type=RTM_NEWADDR, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1772047166, nlmsg_pid=291555}, {ifa_family=AF_INET6, ifa_prefixlen=64, ifa_flags=IFA_F_PERMANENT, ifa_scope=RT_SCOPE_LINK, ifa_index=if_nametoindex("eth0")}, [[{nla_len=20, nla_type=IFA_ADDRESS}, inet_pton(AF_INET6, "fe80::5055:55ff:fe3f:f7a1")], [{nla_len=20, nla_type=IFA_CACHEINFO}, {ifa_prefered=4294967295, ifa_valid=4294967295, cstamp=1023, tstamp=1023}], [{nla_len=8, nla_type=IFA_FLAGS}, IFA_F_PERMANENT], [{nla_len=5, nla_type=IFA_PROTO}, "\x03"]]]], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 152
+recvmsg(3, {msg_name={sa_family=AF_NETLINK, nl_pid=0, nl_groups=00000000}, msg_namelen=12, msg_iov=[{iov_base=[{nlmsg_len=20, nlmsg_type=NLMSG_DONE, nlmsg_flags=NLM_F_MULTI, nlmsg_seq=1772047166, nlmsg_pid=291555}, 0], iov_len=4096}], msg_iovlen=1, msg_controllen=0, msg_flags=0}, 0) = 20
+socket(AF_UNIX, SOCK_STREAM|SOCK_CLOEXEC|SOCK_NONBLOCK, 0) = 4
+connect(4, {sa_family=AF_UNIX, sun_path="/var/run/nscd/socket"}, 110) = -1 ENOENT (No such file or directory)
+close(4)                                = 0
+close(3)                                = 0
+socket(AF_INET6, SOCK_DGRAM|SOCK_CLOEXEC, IPPROTO_IP) = 3
+connect(3, {sa_family=AF_INET6, sin6_port=htons(4443), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::", &sin6_addr), sin6_scope_id=0}, 28) = 0
+getsockname(3, {sa_family=AF_INET6, sin6_port=htons(35972), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::1", &sin6_addr), sin6_scope_id=0}, [28]) = 0
+connect(3, {sa_family=AF_UNSPEC, sa_data="\0\0\0\0\0\0\0\0\0\0\0\0\0\0"}, 16) = 0
+connect(3, {sa_family=AF_INET, sin_port=htons(4443), sin_addr=inet_addr("0.0.0.0")}, 16) = 0
+getsockname(3, {sa_family=AF_INET6, sin6_port=htons(49942), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::ffff:127.0.0.1", &sin6_addr), sin6_scope_id=0}, [28]) = 0
+close(3)                                = 0
+socket(AF_INET6, SOCK_STREAM, IPPROTO_TCP) = 3
+getsockopt(3, SOL_SOCKET, SO_TYPE, [1], [4]) = 0
+ioctl(3, FIONBIO, [0])                  = 0
+setsockopt(3, SOL_IPV6, IPV6_V6ONLY, [0], 4) = 0
+setsockopt(3, SOL_SOCKET, SO_REUSEADDR, [1], 4) = 0
+bind(3, {sa_family=AF_INET6, sin6_port=htons(4443), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::", &sin6_addr), sin6_scope_id=0}, 28) = 0
+listen(3, 4096)                         = 0
+write(1, "ACCEPT\n", 7)                 = 7
+accept(3, {sa_family=AF_INET6, sin6_port=htons(38162), sin6_flowinfo=htonl(0), inet_pton(AF_INET6, "::ffff:127.0.0.1", &sin6_addr), sin6_scope_id=0}, [112 => 28]) = 4
+ioctl(4, FIONBIO, [0])                  = 0
+setsockopt(4, SOL_TCP, TCP_NODELAY, [1], 4) = 0
+setsockopt(4, SOL_TCP, TCP_ULP, [7564404], 4) = -1 ENOENT (No such file or directory)
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+brk(0x6432c2021000)                     = 0x6432c2021000
+read(4, "\26\3\1\1 ", 5)                = 5
+read(4, "\1\0\1\34\3\3\334\22\232\226kw\212\205\222j\310\226\35\371\330\216+f6\2400\343AR\275P\fw\252B}' \210\324H\323\37&lg|6\24\352j\346\355)\247\224\6\246\211z\n\207\265"..., 288) = 288
+getpid()                                = 291555
+getpid()                                = 291555
+newfstatat(AT_FDCWD, "/usr/lib/ssl/certs/3e802d70.0", 0x7ffd89985c10, 0) = -1 ENOENT (No such file or directory)
+newfstatat(AT_FDCWD, "/usr/lib/ssl/certs", {st_mode=S_IFDIR|0755, st_size=20480, ...}, 0) = 0
+openat(AT_FDCWD, "/usr/lib/ssl/certs", O_RDONLY|O_NONBLOCK|O_CLOEXEC|O_DIRECTORY) = 5
+fstat(5, {st_mode=S_IFDIR|0755, st_size=20480, ...}) = 0
+getdents64(5, 0x6432c200d620 /* 295 entries */, 32768) = 12704
+getdents64(5, 0x6432c200d620 /* 0 entries */, 32768) = 0
+close(5)                                = 0
+getpid()                                = 291555
+getpid()                                = 291555
+write(4, "\26\3\3\0z\2\0\0v\3\3\376u\373\23\232\230M\264\":\0^\315^6\265?\234\263w\307Gx\225\350\255\356\230K\306\5\337 \210\324H\323\37&lg|6\24\352j\346\355)\247\224\6\246"..., 1428) = 1428
+read(4, "\24\3\3\0\1", 5)               = 5
+read(4, "\1", 1)                        = 1
+read(4, "\27\3\3\0E", 5)                = 5
+read(4, "\\\317\206\265\263\256p\333\373\201\1MJ\214\37\364\346sj<Mw-\315%\32M\304|5\266\356\30t\307p\2315\\\327Z\376)eU\324m0\t\6\23\16\203\326$\252i\3\361\237\214\334\213;"..., 69) = 69
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+write(4, "\27\3\3\0\372\225\30~\213\341\275C\252\227\356q\371\214\203\331\302Q\271\305V\3203\231y\243\23Fz\3\265\313\30\271s^\237\332E\326\302Y\311\225\377\33\366\272\300\263k4\2338jr\223\344i\f"..., 255) = 255
+getpid()                                = 291555
+getpid()                                = 291555
+getpid()                                = 291555
+write(4, "\27\3\3\0\372\21\233];\322`\251\261\36\177\255\344\316\201f\243\252\371\202'|\17\311c\303\253\310\303x{\240\355\22\264V\17\355\206\222\201\177\242\235\247\364\267C\343\271qS\330\t\373\254\25I\375P"..., 255) = 255
+write(1, "-----BEGIN SSL SESSION PARAMETERS-----\n", 39) = 39
+write(1, "MIGDAgEBAgIDBAQCEwIEIKFVNKu6xWqk1fbN6DY5wEYsVwN0YjSDubYJoLcNp025"..., 130) = 130
+write(1, "OAOhBgIEaZ9LR6IEAgIcIKQGBAQBAAAArgcCBQCOnCvzswMCAR0=\n", 53) = 53
+write(1, "-----END SSL SESSION PARAMETERS-----\n", 37) = 37
+write(1, "Shared ciphers:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA2"..., 698) = 698
+write(1, "Signature Algorithms: ECDSA+SHA256:ECDSA+SHA384:ECDSA+SHA512:Ed2"..., 266) = 266
+write(1, "Shared Signature Algorithms: ECDSA+SHA256:ECDSA+SHA384:ECDSA+SHA"..., 229) = 229
+write(1, "Supported groups: x25519:secp256r1:x448:secp521r1:secp384r1:ffdh"..., 110) = 110
+write(1, "Shared groups: x25519:secp256r1:x448:secp521r1:secp384r1:ffdhe20"..., 107) = 107
+write(1, "CIPHER is TLS_AES_256_GCM_SHA384\n", 33) = 33
+write(1, "Secure Renegotiation IS supported\n", 34) = 34
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "k\10b6\226\315F8\17\301\22\17\374s\26\254^\305\245", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "\206`WL=\356\241WF'\265o\354\34\n\363\304\270n", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "\3\241\202\267\340W\211I\334-\242\322\367\276\243\237\215\3654", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "\322\235\221\347\t9\n\6\2549&\306}vCY\311\305B", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "\7q\37\235\17\210\301V\32[i\337\324\277\222\275\307\377\6", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "Ky\241`\0053\376\373z\3614\252?\23\320\375N\251\273", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "U\303\305\265Js\265\350[\246|,nT\261\16\376\356s", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "\342u\224\340\363\315\31\267F_\241\27\355\335rt\227\277\214", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "N\216\307w<\312H<\202\3060\3534\201\371T\243\21v", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "\363\37\370\326/\216q\"\332y\242\313\273h\211\t\0357:", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "Ae\7\37V\374\234\201\211\277\327\222\223\241\330\\\32\3124", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "\27\3\3\0\23", 5)              = 5
+read(4, "\235.r9\326\tZ\343\245\245\210\217A:\351b\3610I", 19) = 19
+write(1, "a\n", 2)                      = 2
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [0])
+read(0, "a\n", 16384)                   = 2
+write(4, "\27\3\3\0\23<\220q\f\30/\222*C\375o\361\302z\361Y\332\352,", 24) = 24
+pselect6(5, [0 4], NULL, NULL, NULL, NULL) = 1 (in [4])
+read(4, "", 5)                          = 0
+write(4, "\27\3\3\0\23!\325\322\320e\343\10\"\\\265\360\302V\337\321(\257\222\341", 24) = 24
+write(1, "ERROR\n", 6)                  = 6
+write(2, "4017A85EF9740000:error:0A000126:SSL routines:ssl3_read_n:unexpec"..., 120) = 120
+write(1, "shutting down SSL\n", 18)     = 18
+write(1, "CONNECTION CLOSED\n", 18)     = 18
+shutdown(4, SHUT_WR)                    = -1 ENOTCONN (Transport endpoint is not connected)
+pselect6(5, [4], NULL, NULL, {tv_sec=0, tv_nsec=500000000}, NULL) = 1 (in [4], left {tv_sec=0, tv_nsec=499963999})
+read(4, "", 64)                         = 0
+close(4)                                = 0
+accept(3, 0x6432c1ff43b0, [112])        = ? ERESTARTSYS (To be restarted if SA_RESTART is set)
+--- SIGINT {si_signo=SIGINT, si_code=SI_KERNEL} ---
++++ killed by SIGINT +++

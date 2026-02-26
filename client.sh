@@ -1,0 +1,1 @@
+openssl s_client -connect localhost:4443 -cert ./self-signed-certs/server-cert.pem -key ./self-signed-certs/server-key.pem -msg -debug

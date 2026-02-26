@@ -1,0 +1,1 @@
+strace -e trace=read,write,pselect6 -o strace-output.log -s 64 openssl s_server -accept 4443 -cert ./self-signed-certs/server-cert.pem -key ./self-signed-certs/server-key.pem
