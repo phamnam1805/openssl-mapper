@@ -155,22 +155,19 @@ int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen)
 // Helper function to send OOB byte and release token
 static void send_oob_token(int fd)
 {
-    struct timespec now;
-    get_ts(&now);
-    long delta_us = ts_diff_us(&last_write_ts, &now);
 
     unsigned char oob_byte = 'X';
     ssize_t n = original_send(fd, &oob_byte, 1, MSG_OOB);
     if (n == 1)
     {
-        LOG("[pid=%d] sent OOB token on fd=%d, delta_since_last_write=%ld us\n",
-            getpid(), fd, delta_us);
+        LOG("[pid=%d] sent OOB token on fd=%d\n",
+            getpid(), fd);
         has_token = false;
     }
     else
     {
-        LOG("[pid=%d] failed to send OOB token on fd=%d: %s (delta=%ld us)\n",
-            getpid(), fd, strerror(errno), delta_us);
+        LOG("[pid=%d] failed to send OOB token on fd=%d: %s\n",
+            getpid(), fd, strerror(errno));
     }
 }
 
@@ -218,16 +215,16 @@ ssize_t read(int sockfd, void *buf, size_t len)
         return original_read(sockfd, buf, len);
 
     fd_set readfds;
-    // fd_set exceptfds;
+    fd_set exceptfds;
     FD_ZERO(&readfds);
-    // FD_ZERO(&exceptfds);
+    FD_ZERO(&exceptfds);
     FD_SET(sockfd, &readfds);
-    // FD_SET(sockfd, &exceptfds);
+    FD_SET(sockfd, &exceptfds);
     struct timeval timeout = {0, 0}; // Non-blocking select
     int sel_ret = original_select(sockfd + 1, &readfds, NULL, NULL, &timeout);
     if (sel_ret > 0) {
         log_fd_set("readfds (before read)", &readfds, sockfd + 1);
-        // log_fd_set("exceptfds (before read)", &exceptfds, sockfd + 1);
+        log_fd_set("exceptfds (before read)", &exceptfds, sockfd + 1);
     } else {
         if (has_token) {
             LOG("[pid=%d] read: sockfd=%d, len=%zu, sel_ret=%d, has_token=%d => sending OOB token before read\n",
