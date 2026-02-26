@@ -33,7 +33,6 @@ static bool ENABLE_LOGGING = true;
 // Token state: true means library holds token, false means mapper holds token
 // At start, mapper holds token (has_token = false)
 static bool has_token = false;
-static bool write_happened = false;
 static bool connection_half_closed = false;
 static struct timespec last_write_ts = {0, 0};
 
@@ -148,7 +147,6 @@ int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen)
         }
 
         has_token = false;
-        write_happened = false;
     }
 
     return client_fd;
@@ -203,33 +201,6 @@ static bool try_recv_oob_token(int fd)
     return false;
 }
 
-int SSL_read(SSL *ssl, void *buf, int num)
-{
-    if (SSL_get_fd(ssl) != MONITORED_FD){
-        return original_SSL_read(ssl, buf, num);
-    }
-    if (has_token && write_happened)
-    {
-        LOG("[pid=%d] SSL_read: sockfd=%d, num=%d, has_token=%d => sending OOB token before SSL_read\n",
-            getpid(), MONITORED_FD, num, has_token);
-        send_oob_token(MONITORED_FD);
-        write_happened = false;
-    } else {
-        LOG("[pid=%d] SSL_read: sockfd=%d, num=%d, has_token=%d\n",
-                getpid(), MONITORED_FD, num, has_token);
-    }
-    int ret = original_SSL_read(ssl, buf, num);
-    if(has_token && !write_happened){
-        LOG("[pid=%d] SSL_read: sockfd=%d, num=%d, ret=%d, has_token=%d => sending OOB token after SSL_read\n",
-            getpid(), MONITORED_FD, num, ret, has_token);
-        send_oob_token(MONITORED_FD);
-    } else {
-        LOG("[pid=%d] SSL_read: sockfd=%d, num=%d, ret=%d, has_token=%d\n",
-                getpid(), MONITORED_FD, num, ret, has_token);
-    }
-    return ret;
-}
-
 int SSL_accept(SSL *ssl)
 {
     if (SSL_get_fd(ssl) != MONITORED_FD){
@@ -246,24 +217,17 @@ ssize_t read(int sockfd, void *buf, size_t len)
     if (sockfd != MONITORED_FD)
         return original_read(sockfd, buf, len);
 
-    // if (has_token && write_happened)
-    // {
-    //     LOG("[pid=%d] read: sockfd=%d, len=%zu, has_token=%d => sending OOB token before read\n",
-    //         getpid(), sockfd, len, has_token);
-    //     send_oob_token(sockfd);
-    //     write_happened = false;
-    // }
     fd_set readfds;
-    fd_set exceptfds;
+    // fd_set exceptfds;
     FD_ZERO(&readfds);
-    FD_ZERO(&exceptfds);
+    // FD_ZERO(&exceptfds);
     FD_SET(sockfd, &readfds);
-    FD_SET(sockfd, &exceptfds);
+    // FD_SET(sockfd, &exceptfds);
     struct timeval timeout = {0, 0}; // Non-blocking select
-    int sel_ret = original_select(sockfd + 1, &readfds, NULL, &exceptfds, &timeout);
+    int sel_ret = original_select(sockfd + 1, &readfds, NULL, NULL, &timeout);
     if (sel_ret > 0) {
         log_fd_set("readfds (before read)", &readfds, sockfd + 1);
-        log_fd_set("exceptfds (before read)", &exceptfds, sockfd + 1);
+        // log_fd_set("exceptfds (before read)", &exceptfds, sockfd + 1);
     } else {
         if (has_token) {
             LOG("[pid=%d] read: sockfd=%d, len=%zu, sel_ret=%d, has_token=%d => sending OOB token before read\n",
@@ -315,7 +279,6 @@ int shutdown(int sockfd, int how)
         LOG("[pid=%d] shutdown: sockfd=%d, how=%d (%s), has_token=%d => sending OOB token before shutdown\n",
             getpid(), sockfd, how, how_str, has_token);
         send_oob_token(sockfd);
-        write_happened = false;
     } else {
         LOG("[pid=%d] shutdown: sockfd=%d, how=%d (%s), has_token=%d => no OOB token sent\n",
             getpid(), sockfd, how, how_str, has_token);
