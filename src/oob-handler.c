@@ -268,35 +268,35 @@ ssize_t read(int sockfd, void *buf, size_t len)
 //     return ret;
 // }
 
-int shutdown(int sockfd, int how)
-{
-    if(sockfd != MONITORED_FD)
-        return original_shutdown(sockfd, how);
+// int shutdown(int sockfd, int how)
+// {
+//     if(sockfd != MONITORED_FD)
+//         return original_shutdown(sockfd, how);
 
-    const char *how_str;
-    switch (how)
-    {
-        case SHUT_RD:   how_str = "SHUT_RD";   break;
-        case SHUT_WR:   how_str = "SHUT_WR";   break;
-        case SHUT_RDWR: how_str = "SHUT_RDWR"; break;
-        default:        how_str = "UNKNOWN";   break;
-    }
-    if(has_token){
-        LOG("[pid=%d] shutdown: sockfd=%d, how=%d (%s), has_token=%d => sending OOB token before shutdown\n",
-            getpid(), sockfd, how, how_str, has_token);
-        send_oob_token(sockfd, 'E');
-    } else {
-        LOG("[pid=%d] shutdown: sockfd=%d, how=%d (%s), has_token=%d => no OOB token sent\n",
-            getpid(), sockfd, how, how_str, has_token);
-    }
-    int ret = original_shutdown(sockfd, how);
-    connection_half_closed = ret == 0 ? true : false;
-    LOG("[pid=%d] shutdown: fd=%d => ret=%d%s%s\n",
-        getpid(), sockfd, ret,
-        ret < 0 ? " (FAILED) " : "",
-        ret < 0 ? strerror(errno) : "");
-    return ret;
-}
+//     const char *how_str;
+//     switch (how)
+//     {
+//         case SHUT_RD:   how_str = "SHUT_RD";   break;
+//         case SHUT_WR:   how_str = "SHUT_WR";   break;
+//         case SHUT_RDWR: how_str = "SHUT_RDWR"; break;
+//         default:        how_str = "UNKNOWN";   break;
+//     }
+//     if(has_token){
+//         LOG("[pid=%d] shutdown: sockfd=%d, how=%d (%s), has_token=%d => sending OOB token before shutdown\n",
+//             getpid(), sockfd, how, how_str, has_token);
+//         send_oob_token(sockfd, 'E');
+//     } else {
+//         LOG("[pid=%d] shutdown: sockfd=%d, how=%d (%s), has_token=%d => no OOB token sent\n",
+//             getpid(), sockfd, how, how_str, has_token);
+//     }
+//     int ret = original_shutdown(sockfd, how);
+//     connection_half_closed = ret == 0 ? true : false;
+//     LOG("[pid=%d] shutdown: fd=%d => ret=%d%s%s\n",
+//         getpid(), sockfd, ret,
+//         ret < 0 ? " (FAILED) " : "",
+//         ret < 0 ? strerror(errno) : "");
+//     return ret;
+// }
 
 // int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout)
 // {
