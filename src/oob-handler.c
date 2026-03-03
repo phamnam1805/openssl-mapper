@@ -153,15 +153,13 @@ int accept(int sockfd, struct sockaddr *addr, socklen_t *addrlen)
 }
 
 // Helper function to send OOB byte and release token
-static void send_oob_token(int fd)
+static void send_oob_token(int fd, unsigned char byte)
 {
-
-    unsigned char oob_byte = 'X';
-    ssize_t n = original_send(fd, &oob_byte, 1, MSG_OOB);
+    ssize_t n = original_send(fd, &byte, 1, MSG_OOB);
     if (n == 1)
     {
-        LOG("[pid=%d] sent OOB token on fd=%d\n",
-            getpid(), fd);
+        LOG("[pid=%d] sent OOB token on fd=%d, byte=0x%02x ('%c')\n",
+            getpid(), fd, byte, byte);
         has_token = false;
     }
     else
@@ -230,7 +228,7 @@ ssize_t read(int sockfd, void *buf, size_t len)
         if (has_token) {
             LOG("[pid=%d] read: sockfd=%d, len=%zu, sel_ret=%d, has_token=%d => sending OOB token before read\n",
                     getpid(), sockfd, len, sel_ret, has_token);
-            send_oob_token(sockfd);
+            send_oob_token(sockfd, 'X');
         }
     }
     // if (sel_ret > 0) {
@@ -286,7 +284,7 @@ int shutdown(int sockfd, int how)
     if(has_token){
         LOG("[pid=%d] shutdown: sockfd=%d, how=%d (%s), has_token=%d => sending OOB token before shutdown\n",
             getpid(), sockfd, how, how_str, has_token);
-        send_oob_token(sockfd);
+        send_oob_token(sockfd, 'E');
     } else {
         LOG("[pid=%d] shutdown: sockfd=%d, how=%d (%s), has_token=%d => no OOB token sent\n",
             getpid(), sockfd, how, how_str, has_token);
@@ -299,8 +297,6 @@ int shutdown(int sockfd, int how)
         ret < 0 ? strerror(errno) : "");
     return ret;
 }
-
-
 
 // int select(int nfds, fd_set *readfds, fd_set *writefds, fd_set *exceptfds, struct timeval *timeout)
 // {
