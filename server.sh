@@ -1,1 +1,1 @@
-openssl s_server -debug -msg -accept 127.0.0.1:4443 -cert ./self-signed-certs/server-cert.pem -key ./self-signed-certs/server-key.pem -www
+openssl s_server -debug -msg -accept 127.0.0.1:4443 -cert ./certs/server-cert.pem -key ./certs/server-key.pem -www
