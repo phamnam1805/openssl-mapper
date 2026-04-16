@@ -1,0 +1,30 @@
+name: original-bdist3
+
+services:
+  openssl:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        DEBUG_OPTIONS: ""
+    image: openssl:latest
+    container_name: openssl-original-bdist3
+    stdin_open: true
+    tty: true
+    working_dir: /project
+    volumes:
+      - ../:/project
+    environment:
+      - RUN_ID=0
+      - TIMEOUT=1
+    command:
+      - bash
+      - -c
+      - |
+        rm -rf /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID} &&
+        mkdir -p /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID} &&
+        openssl s_server -debug -msg -accept 127.0.0.1:4443 -cert ./certs/server-cert.pem -key ./certs/server-key.pem -www &
+        sleep 1 &&
+        python3 ./src/infer_server.py -v -R localhost:44433 \
+          --timeout 2 -E BDist:3 -S tls13 \
+          -o /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID} > /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID}/stats.log
