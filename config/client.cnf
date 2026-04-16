@@ -1,0 +1,21 @@
+[ req ]
+default_bits = 2048
+default_md = sha256
+prompt = no
+encrypt_key = no
+distinguished_name = dn
+x509_extensions = req_exts
+
+[ dn ]
+C = FR
+O = Paris
+CN = client
+
+[ req_ext ]
+basicConstraints = critical,CA:false
+subjectAltName = @alt_names
+keyUsage = digitalSignature, keyEncipherment
+extendedKeyUsage = serverAuth
+
+[ alt_names ]
+DNS.1 = client

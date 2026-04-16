@@ -58,6 +58,11 @@ def check_isomorphic(automaton_file_1, automaton_file_2):
 
 
 check_isomorphic(
-    "logs/original-final.automaton",
-    "logs/oob-final.automaton",
+    "logs/oob-bdist3/final.automaton",
+    "logs/original-bdist3/final.automaton",
 )
+
+# check_isomorphic(
+#     "logs/original-final.automaton",
+#     "logs/oob-final.automaton",
+# )
