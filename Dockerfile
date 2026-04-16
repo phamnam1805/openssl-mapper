@@ -1,4 +1,4 @@
-FROM debian:trixie
+FROM debian:bookworm
 
 ARG OPENSSL_VERSION=3.6.2
 
