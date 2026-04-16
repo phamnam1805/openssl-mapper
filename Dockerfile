@@ -11,6 +11,7 @@ RUN apt-get update && \
         gcc \
         make \
         libc6-dev \
+        zlib1g-dev \
         dh-autoreconf \
         ca-certificates \
         # Python
