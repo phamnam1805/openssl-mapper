@@ -23,9 +23,9 @@ services:
       - |
         rm -rf /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID} &&
         mkdir -p /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID} &&
-        openssl s_server -debug -msg -accept 127.0.0.1:4443 -cert ./certs/server-cert.pem -key ./certs/server-key.pem -www &
+        openssl s_server -debug -msg -accept 127.0.0.1:4443 -cert ./certs/server-cert.pem -key ./certs/server-key.pem -www 2>/dev/null &
         sleep 1 &&
         source /inference-tools/venv/bin/activate &&
         python3 /inference-tools/original-pylstar-tls/src/infer_server.py -v -R 127.0.0.1:4443 \
           --timeout 2 -E BDist:3 -S tls13 \
-          -o /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID} > /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID}/stats.log
+          -o /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID}/ > /project/logs/timeout-$${TIMEOUT}sec/original-bdist3/run-$${RUN_ID}/stats.log
