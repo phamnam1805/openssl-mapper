@@ -16,6 +16,7 @@ RUN apt-get update && \
         ca-certificates \
         # Python
         python3 \
+        python3-dev \
         python3-pip \
         python3-venv \
         # Debugging and tracing tools
@@ -43,7 +44,7 @@ RUN git clone --depth 1 --branch openssl-${OPENSSL_VERSION} \
     rm -rf /tmp/openssl-src
 
 ENV PATH="/usr/local/openssl/bin:${PATH}"
-ENV LD_LIBRARY_PATH="/usr/local/openssl/lib64:${LD_LIBRARY_PATH}"
+ENV LD_LIBRARY_PATH="/usr/local/openssl/lib64"
 
 # ── Clone pylstar-tls variants ────────────────────────────────────────────────
 RUN mkdir -p /inference-tools
