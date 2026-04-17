@@ -59,7 +59,7 @@ RUN git clone --branch oob-handler \
 RUN git clone https://gitlab.com/phamnam1805/pylstar-tls.git \
         /inference-tools/original-pylstar-tls && \
     git -C /inference-tools/original-pylstar-tls checkout \
-        2554ceb702db9892d2364398d0c20333cae8b527
+        timeout-counter
 
 # ── Python virtual environment ────────────────────────────────────────────────
 RUN python3 -m venv /inference-tools/venv
